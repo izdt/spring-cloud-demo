@@ -11,6 +11,6 @@ public class HelloController{
     private IHelloService service;
     @RequestMapping("/hello/{name}")
     public String sayHello(@PathVariable(value="name") String name){
-        return service.helloWorld(name); 
+        return service.testHelloWorld(name); 
     }
 }

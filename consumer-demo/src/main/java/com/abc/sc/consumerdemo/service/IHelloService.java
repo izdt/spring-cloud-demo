@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/demo")
 public interface IHelloService{
     @RequestMapping("/hello")
-    public String helloWorld(@RequestParam(value="name") String name);
+    public String testHelloWorld(@RequestParam(value="name") String name);
 }
