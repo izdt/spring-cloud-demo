@@ -9,3 +9,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:10101/eureka
+#App Configuration:
+app:
+  config: 
+    delay: 0

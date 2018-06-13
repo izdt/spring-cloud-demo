@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 class HelloController{
     @Value("${server.port}")
     private String port;
+    @Value("${app.config.delay}")
+    private int delay;
     @RequestMapping("/hello")
-    public String helloWorld(@RequestParam String name){
+    public String helloWorld(@RequestParam String name) throws Exception{
+        Thread.sleep(delay);
         return "hello " + name + ", from " + port;
     }
 }
