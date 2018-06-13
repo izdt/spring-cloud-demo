@@ -27,3 +27,10 @@
 
 ### hystrx configuration:
 https://github.com/Netflix/Hystrix/wiki/Configuration#execution.timeout.enabled
+
+
+## Start zipkin server
+```
+curl -sSL https://zipkin.io/quickstart.sh | bash -s
+java -jar zipkin.jar
+```
