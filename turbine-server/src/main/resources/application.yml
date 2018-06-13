@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: turbine-server
+server:
+  port: 10401
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: spring-cloud-consumer-demo
+  instanceUrlSuffix: /hystrix.stream
+  clusterNameExpression: new String("default")
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10101/eureka/
