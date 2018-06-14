@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 public class HelloServiceFallback implements IHelloService{
 	@Override
 	public String testHelloWorld(String name) {
-		return "service not available";
+		return "hello service not available";
 	}
 }
