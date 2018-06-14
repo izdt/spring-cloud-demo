@@ -2,11 +2,11 @@ spring:
   application:
     name: turbine-server
 server:
-  port: 10401
+  port: 10501
 turbine:
   aggregator:
     clusterConfig: default
-  appConfig: spring-cloud-consumer-demo
+  appConfig: spring-cloud-consumer-demo,spring-cloud-middle-service-demo 
   instanceUrlSuffix: /hystrix.stream
   clusterNameExpression: new String("default")
 eureka:
