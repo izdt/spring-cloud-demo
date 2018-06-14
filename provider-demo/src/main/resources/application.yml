@@ -20,3 +20,4 @@ eureka:
 app:
   config: 
     delay: 0
+    error: false
