@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ConsumerDemoApplication<consumer-demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.abc.sc.consumerdemo.ConsumerDemoApplication",
+            "projectName": "consumer-demo",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-EurekaServerApplication<eureka-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.abc.sc.eurekaserver.EurekaServerApplication",
+            "projectName": "eureka-server",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MiddleDemoApplication<middle-demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.abc.sc.middledemo.MiddleDemoApplication",
+            "projectName": "middle-demo",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ProviderDemoApplication<provider-demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.abc.sc.providerdemo.ProviderDemoApplication",
+            "projectName": "provider-demo",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TurbinDemoApplication<turbine-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.abc.sc.turbineserver.TurbinDemoApplication",
+            "projectName": "turbine-server",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 0
+        }
+    ]
+}
