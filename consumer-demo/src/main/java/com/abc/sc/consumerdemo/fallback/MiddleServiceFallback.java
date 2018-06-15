@@ -9,6 +9,6 @@ public class MiddleServiceFallback implements IMiddleService{
 
 	@Override
 	public String testMiddleMethod(String name) {
-		return "service not available";
+		return "middle service not available";
 	}
 }
