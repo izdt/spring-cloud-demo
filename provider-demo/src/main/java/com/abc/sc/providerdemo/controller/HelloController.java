@@ -1,23 +1,26 @@
 package com.abc.sc.providerdemo.controller;
 
+import com.abc.sc.providerdemo.model.DemoRequest;
+import com.abc.sc.providerdemo.model.DemoResponse;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/demo")
-class HelloController{
+class DemoController{
     @Value("${server.port}")
     private String port;
     @Value("${app.config.delay}")
     private int delay;
-    @Value("${app.config.error}")
-    private boolean isError;
-    @RequestMapping("/hello")
-    public String helloWorld(@RequestParam String name) throws Exception{
-        if(isError) throw new Exception("Custom Error");
+    @PostMapping("/hello")
+    public DemoResponse helloWorld(@RequestBody DemoRequest request) throws Exception{
         Thread.sleep(delay);
-        return "hello " + name + ", from " + port;
+        DemoResponse response = new DemoResponse();
+        response.setId(request.getId());
+        response.setName(request.getName());
+        response.setItems(request.getItems());
+        response.setPort(port);
+		return response;
     }
 }
