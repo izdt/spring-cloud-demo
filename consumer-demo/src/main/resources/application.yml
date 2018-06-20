@@ -3,17 +3,7 @@ server:
 spring:
   application:
     name: spring-cloud-consumer-demo
-  zipkin:
-    service:
-      name: ${spring.application.name}
-    base-url: http://localhost:9411
-  sleuth:
-    sampler:
-      percentage: 1
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:10101/eureka/
-feign:
-  hystrix:
-    enabled: true
+      defaultZone: http://10.230.171.89:10101/eureka/
