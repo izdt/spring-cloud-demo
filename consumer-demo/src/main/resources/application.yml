@@ -7,3 +7,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://10.230.171.89:10101/eureka/
+feign:
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
