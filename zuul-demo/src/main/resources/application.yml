@@ -1,0 +1,17 @@
+server:
+  port: 10601
+spring:
+  application:
+    name: spring-cloud-zuul-demo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10101/eureka/
+zuul:
+  routes:
+    api-consumer:
+      path: /consumer/**
+      serviceId: spring-cloud-consumer-demo
+    api-provider:
+      path: /provider/**
+      serviceId: spring-cloud-provider-demo         

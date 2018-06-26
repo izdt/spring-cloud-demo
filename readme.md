@@ -9,6 +9,7 @@
 | consumer-demo | 10301 | spring-cloud-consumer-demo | use fegin/hystrix/zipkin
 | middle-server | 10401 | spring-cloud-middle-service-demo | 
 | turbine-server | 10501 |  turbine-server |
+| zuul-server | 1601 |  zuul-server |
 | zipkin-server | 9411 | zipkin-server | 
 
 
