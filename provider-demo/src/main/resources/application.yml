@@ -8,7 +8,7 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://10.230.171.89:10101/eureka
+      defaultZone: http://localhost:10101/eureka
 feign:
   compression:
     request:
