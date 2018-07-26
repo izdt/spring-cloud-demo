@@ -5,6 +5,8 @@ import com.abc.sc.consumerdemo.model.DemoItem;
 import com.abc.sc.consumerdemo.model.DemoRequest;
 import com.abc.sc.consumerdemo.model.DemoResponse;
 import com.abc.sc.consumerdemo.service.IHelloService;
+import com.abc.sc.consumerdemo.service.IHelloZuulService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController{
     @Autowired
     private IHelloService service;
+    @Autowired
+    private IHelloZuulService zuulService;
+
 
     @RequestMapping("/hello/{name}")
     public DemoResponse sayHello(@PathVariable(value="name") String name){
@@ -30,5 +35,13 @@ public class HelloController{
         items.add(item3);
         request.setItems(items);
         return service.helloWorld(request); 
+    }
+
+    @RequestMapping("/zuul/{name}")
+    public DemoResponse sayHelloWithZuul(@PathVariable(value="name") String name){
+        DemoRequest request = new DemoRequest();
+        request.setId(1);
+        request.setName(name);
+        return zuulService.helloWorld(request); 
     }
 }
