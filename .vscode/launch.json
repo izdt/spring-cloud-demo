@@ -28,17 +28,6 @@
         },
         {
             "type": "java",
-            "name": "Debug (Launch)-MiddleDemoApplication<middle-demo>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "com.abc.sc.middledemo.MiddleDemoApplication",
-            "projectName": "middle-demo",
-            "args": ""
-        },
-        {
-            "type": "java",
             "name": "Debug (Launch)-ProviderDemoApplication<provider-demo>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -50,13 +39,13 @@
         },
         {
             "type": "java",
-            "name": "Debug (Launch)-TurbinDemoApplication<turbine-server>",
+            "name": "Debug (Launch)-ZuulDemoApplication<zuuldemo>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
-            "mainClass": "com.abc.sc.turbineserver.TurbinDemoApplication",
-            "projectName": "turbine-server",
+            "mainClass": "com.abc.sc.zuuldemo.ZuulDemoApplication",
+            "projectName": "zuuldemo",
             "args": ""
         },
         {

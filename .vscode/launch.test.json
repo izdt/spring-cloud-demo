@@ -1,0 +1,84 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "provider-demo",
+                "projectName": "provider-demo",
+                "workingDirectory": "d:\\Projects\\Github\\learnCodes\\spring-cloud-demo\\provider-demo",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "eureka-server",
+                "projectName": "eureka-server",
+                "workingDirectory": "d:\\Projects\\Github\\learnCodes\\spring-cloud-demo\\eureka-server",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "zuuldemo",
+                "projectName": "zuuldemo",
+                "workingDirectory": "d:\\Projects\\Github\\learnCodes\\spring-cloud-demo\\zuul-demo",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "consumer-demo",
+                "projectName": "consumer-demo",
+                "workingDirectory": "d:\\Projects\\Github\\learnCodes\\spring-cloud-demo\\consumer-demo",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "provider-demo",
+                "projectName": "provider-demo",
+                "workingDirectory": "d:\\Projects\\Github\\learnCodes\\spring-cloud-demo\\provider-demo",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "eureka-server",
+                "projectName": "eureka-server",
+                "workingDirectory": "d:\\Projects\\Github\\learnCodes\\spring-cloud-demo\\eureka-server",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "zuuldemo",
+                "projectName": "zuuldemo",
+                "workingDirectory": "d:\\Projects\\Github\\learnCodes\\spring-cloud-demo\\zuul-demo",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "consumer-demo",
+                "projectName": "consumer-demo",
+                "workingDirectory": "d:\\Projects\\Github\\learnCodes\\spring-cloud-demo\\consumer-demo",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
