@@ -26,6 +26,13 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>com.abc.sc</groupId>
+			<artifactId>provider-demo-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>

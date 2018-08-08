@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import com.abc.sc.consumerdemo.model.DemoItem;
 import com.abc.sc.consumerdemo.model.DemoRequest;
 import com.abc.sc.consumerdemo.model.DemoResponse;
+import com.abc.sc.consumerdemo.service.IHelloApiService;
 import com.abc.sc.consumerdemo.service.IHelloService;
 import com.abc.sc.consumerdemo.service.IHelloZuulService;
+import com.abc.sc.providerdemoapi.entity.HelloEntity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +20,8 @@ public class HelloController{
     private IHelloService service;
     @Autowired
     private IHelloZuulService zuulService;
-
+    @Autowired
+    private IHelloApiService apiService;
 
     @RequestMapping("/hello/{name}")
     public DemoResponse sayHello(@PathVariable(value="name") String name){
@@ -37,6 +40,14 @@ public class HelloController{
         return service.helloWorld(request); 
     }
 
+    @RequestMapping("/helloApi/{name}")
+    public HelloEntity sayHelloWithApi(@PathVariable(value="name") String name){
+        HelloEntity entity = new HelloEntity();
+        entity.setIp(name);
+        entity.setPort(1);
+        return apiService.testHello(entity); 
+    }
+
     @RequestMapping("/zuul/{name}")
     public DemoResponse sayHelloWithZuul(@PathVariable(value="name") String name){
         DemoRequest request = new DemoRequest();
@@ -44,4 +55,5 @@ public class HelloController{
         request.setName(name);
         return zuulService.helloWorld(request); 
     }
+
 }

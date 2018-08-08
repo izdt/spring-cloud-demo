@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name="spring-cloud-provider-demo")
 public interface IHelloService{
-    @PostMapping("/hello")
+    @PostMapping("/v1/TESTJ001")
     public DemoResponse helloWorld(@RequestBody DemoRequest request);
 }
