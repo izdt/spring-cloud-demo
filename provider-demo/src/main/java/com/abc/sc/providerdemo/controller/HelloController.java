@@ -18,8 +18,8 @@ class DemoController{
     @Value("${app.config.delay}")
     private int delay;
 
-    @ApiOperation(value = "TEST01 查询接口", notes = "获取所有用户信息")
-    @PostMapping("/hello")
+    @ApiOperation(value = "TESTJ001查询用户信息(V1)", notes = "获取所有用户信息")
+    @PostMapping("/v1/TESTJ001")
     public DemoResponse helloWorld(@RequestBody DemoRequest request) throws Exception{
         Thread.sleep(delay);
         DemoResponse response = new DemoResponse();
