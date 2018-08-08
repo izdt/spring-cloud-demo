@@ -6,7 +6,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:10101/eureka/
+      defaultZone: http://localhost:10101/eureka/, http://localhost:10102/eureka/
 feign:
   compression:
     request:
