@@ -1,0 +1,18 @@
+server:
+  port: 10302
+eureka:
+  instance:
+    preferIpAddress: true
+    metadataMap:
+      # Ribbon will use this metadata to choice zone
+      zone: beijing-1,beijing-2
+  client:
+    # eureka client prefer use same zone eureka server
+    prefer-same-zone-eureka: true
+    #地区
+    region: beijing
+    availability-zones:
+      beijing: beijing-1,beijing-2
+    service-url:
+      beijing-1: http://localhost:10101/eureka/
+      beijing-2: http://localhost:10103/eureka/

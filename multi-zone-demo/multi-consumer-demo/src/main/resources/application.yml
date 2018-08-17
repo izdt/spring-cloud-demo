@@ -1,8 +1,8 @@
-server:
-  port: 10301
 spring:
   application:
     name: spring-cloud-consumer-demo
+  profiles:
+    active: server1
   zipkin:
     service:
       name: ${spring.application.name}
@@ -10,10 +10,6 @@ spring:
   sleuth:
     sampler:
       percentage: 1
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:10101/eureka/
 feign:
   hystrix:
     enabled: true

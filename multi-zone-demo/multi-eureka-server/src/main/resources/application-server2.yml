@@ -5,7 +5,13 @@ eureka:
     hostname: localhost
     preferIpAddress: true
   client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:10101/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+    prefer-same-zone-eureka: true
+    #地区
+    region: beijing
+    availability-zones:
+      beijing: beijing-2,beijing-1
+    service-url:
+      beijing-1: http://localhost:10101/eureka/,http://localhost:10102/eureka/
+      beijing-2: http://localhost:10103/eureka/
