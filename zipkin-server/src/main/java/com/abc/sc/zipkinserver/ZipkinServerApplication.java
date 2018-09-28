@@ -2,10 +2,10 @@ package com.abc.sc.zipkinserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import zipkin.server.EnableZipkinServer;
 
-@EnableEurekaServer
 @SpringBootApplication
+@EnableZipkinServer
 public class ZipkinServerApplication {
 
 	public static void main(String[] args) {
