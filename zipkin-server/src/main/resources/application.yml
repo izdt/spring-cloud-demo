@@ -5,10 +5,9 @@ spring:
     name: zipkin-server
 zipkin:
   storage:
-    StorageComponent: elasticsearch
     type: elasticsearch
     elasticsearch:
-      hosts: localhost:9300
+      hosts: localhost:9200
       index: zipkin
   collector:
    #rabbitmq:
@@ -17,9 +16,14 @@ zipkin:
       ##username: guest
       #queue: zipkin
     kafka:
-      zookeeper: localhost:2181
+      bootstrap-servers: localhost:9092
       topic: zipkin
       groupId: zipkin
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
 eureka:
   instance:
     hostname: localhost
