@@ -5,6 +5,7 @@ java -jar zipkin.jar
 
 # https://github.com/openzipkin/zipkin/blob/master/zipkin-server/README.md
 # https://github.com/openzipkin/zipkin/tree/master/zipkin-autoconfigure/collector-kafka
+set KAFKA_BOOTSTRAP_SERVERS=127.0.0.1:9092
 java -Dzipkin.collector.kafka.bootstrap-servers=127.0.0.1:9092 -jar zipkin.jar
 elasticsearch
 set STORAGE_TYPE=elasticsearch && set ES_HOST=http://localhost:9200 
