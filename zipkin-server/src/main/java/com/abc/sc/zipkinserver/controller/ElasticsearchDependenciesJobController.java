@@ -16,15 +16,13 @@ public class ElasticsearchDependenciesJobController{
 
     @RequestMapping("/run")
     public String runJob(@RequestParam(required=false) String date) throws Exception {
-        String[] jarPath = ZipkinDependenciesUtility.pathToUberJar();
         long day = date!=null? ZipkinDependenciesUtility.parseDay(date) : System.currentTimeMillis();
         ElasticsearchDependenciesJob.builder()
         .logInitializer(logInitializer)
-        .jars(jarPath)
         .day(day)
         .build()
         .run();
-        return "Run!"+day;
+        return "Run job of "+day+" done!";
     }
    
 }

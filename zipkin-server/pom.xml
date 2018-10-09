@@ -72,6 +72,11 @@
 			<artifactId>zipkin-dependencies-elasticsearch</artifactId>
 			<version>2.0.2</version>
 		</dependency>
+		<dependency>
+		 	<groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -80,6 +85,18 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+				<execution>
+					<id>attach-sources</id>
+					<goals>
+					<goal>jar</goal>
+					</goals>
+				</execution>
+				</executions>
+            </plugin>
 		</plugins>
 	</build>
 </project>
