@@ -1,8 +1,6 @@
 server:
   port: 10301
 spring:
-  application:
-    name: spring-cloud-consumer-demo
   zipkin:
     sender:
       type: kafka
@@ -22,3 +20,7 @@ eureka:
 feign:
   hystrix:
     enabled: true
+
+logging.level.org.springframework.cloud.sleuth: DEBUG
+management.endpoints.web.base-path: /
+management.endpoints.web.exposure.include: "*"
