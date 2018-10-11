@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import brave.Span;
 import brave.Tracer;
 
 
@@ -31,8 +32,10 @@ public class LogController{
     @RequestMapping("/log/hello/{name}")
     public String sayHello(@PathVariable(value="name") String name){
         log.info("Hello from spring cloud consumer sayHello with "+name);
+        Span span = tracer.currentSpan();
         //tracer.currentSpan().context();
-        tracer.currentSpan().tag("hello name", name);
+        span.annotate("request_send");
+        span.tag("hello name", name);
         return service.testHelloWorld(name); 
     }
     @RequestMapping("/log/ribbon/{name}")
