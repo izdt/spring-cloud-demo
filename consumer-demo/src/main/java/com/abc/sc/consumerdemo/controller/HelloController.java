@@ -1,4 +1,7 @@
 package com.abc.sc.consumerdemo.controller;
+
+import com.abc.sc.consumerdemo.remote.vo.UserInfo;
+import com.abc.sc.consumerdemo.service.DemoService;
 import com.abc.sc.consumerdemo.service.IHelloService;
 import com.abc.sc.consumerdemo.service.IHelloServiceWithRibbon;
 import com.abc.sc.consumerdemo.service.IMiddleService;
@@ -16,6 +19,8 @@ public class HelloController{
     private IHelloServiceWithRibbon ribbonService;
     @Autowired
     private IMiddleService middleService;
+    @Autowired
+    private DemoService demoService;
 
     @RequestMapping("/hello/{name}")
     public String sayHello(@PathVariable(value="name") String name){
@@ -28,5 +33,9 @@ public class HelloController{
     @RequestMapping("/show/{name}")
     public String showTrace(@PathVariable(value="name") String name){
         return middleService.testMiddleMethod(name); 
+    }
+    @RequestMapping("/demo/{name}")
+    public UserInfo demo(@PathVariable(value="name") String name){
+        return demoService.getUserInfo(name);
     }
 }
