@@ -23,6 +23,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:10101/eureka
+      
+management.endpoints.web.exposure.include: "*"
 #App Configuration:
 app:
   config: 
