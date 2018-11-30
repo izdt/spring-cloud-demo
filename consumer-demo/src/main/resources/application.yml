@@ -22,6 +22,8 @@ feign:
     enabled: true
 
 logging.level.org.springframework.cloud.sleuth: DEBUG
-management.endpoints.web.base-path: /
+#management.endpoints.web.base-path: /
 management.endpoints.web.exposure.include: "*"
+management.metrics.export.atlas:
+  uri: http://localhost:7101/api/v1/publish
 

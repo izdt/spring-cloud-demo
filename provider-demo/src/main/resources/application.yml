@@ -25,6 +25,8 @@ eureka:
       defaultZone: http://localhost:10101/eureka
       
 management.endpoints.web.exposure.include: "*"
+management.metrics.export.atlas:
+  uri: http://localhost:7101/api/v1/publish
 #App Configuration:
 app:
   config: 
