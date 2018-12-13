@@ -28,6 +28,6 @@ management.metrics.export.atlas:
   uri: http://localhost:7101/api/v1/publish
 
 
-ribbon.eureka.enabled: false
+#ribbon.eureka.enabled: false
 spring-cloud-provider-demo.ribbon.listOfServers: localhost:10202
 
