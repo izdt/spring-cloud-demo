@@ -9,6 +9,7 @@ import com.abc.sc.consumerdemo.service.IMiddleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.metrics.MetricsEndpoint;
 import org.springframework.boot.actuate.metrics.MetricsEndpoint.MetricResponse;
 import org.springframework.context.annotation.Bean;
@@ -38,15 +39,18 @@ public class LogController{
     private MetricsEndpoint metricsEndpoint;
     @Autowired
     private MeterRegistry metricRegistry;    
-  
+    @Value("${spring.application.name}")
+    private String appName;
+
     @Bean
     public Timer getTimer(){
         //Will add tag to all metrics
-        metricRegistry.config().commonTags("serviceid","consumer-service","appid","SDC20170301");
+        metricRegistry.config().commonTags("app",appName,"serviceid","consumer-service","appid","SDC20170301");
         return metricRegistry.timer("acm.requests", "trcode","TESTO001");
     }
     @Autowired
     private Timer timer;  
+
 
     @RequestMapping("/log/hello/{name}")
     public String sayHello(@PathVariable(value="name") String name){
