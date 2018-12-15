@@ -16,7 +16,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:10101/eureka/
+      defaultZone: http://abc:abcabc@localhost:10101/eureka/
 feign:
   hystrix:
     enabled: true
@@ -24,8 +24,8 @@ feign:
 logging.level.org.springframework.cloud.sleuth: DEBUG
 #management.endpoints.web.base-path: /
 management.endpoints.web.exposure.include: "*"
-management.metrics.export.atlas:
-  uri: http://localhost:7101/api/v1/publish
+management.endpoint.health.show-details: ALWAYS
+#management.metrics.export.atlas.uri: http://localhost:7101/api/v1/publish
 
 
 #ribbon.eureka.enabled: false
