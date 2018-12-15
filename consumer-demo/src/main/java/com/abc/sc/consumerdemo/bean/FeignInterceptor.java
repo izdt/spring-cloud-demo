@@ -1,7 +1,5 @@
 package com.abc.sc.consumerdemo.bean;
 
-import java.io.Console;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -13,7 +11,7 @@ import org.springframework.stereotype.Component;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 
-@Component
+//@Component
 public class FeignInterceptor implements RequestInterceptor{
     @Bean
     public ObjectMapper getObjectMapper(){

@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: spring-boot-admin-demo
+  security:
+    user:
+      name: "abc"
+      password: "abcabc"
+eureka:  
+  # instance:
+  #   leaseRenewalIntervalInSeconds: 10
+  #   health-check-url-path: /actuator/health
+  #   metadata-map:
+  #     startup: ${random.int}    #needed to trigger info and endpoint update after restart
+  client:
+    #registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://abc:abcabc@localhost:10101/eureka/
+  instance:
+    metadata-map:
+      user.name: "abc"  
+      user.password: "abcabc" 
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" 
+  endpoint:
+    health:
+      show-details: ALWAYS
+
