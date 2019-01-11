@@ -1,19 +1,28 @@
 debug: true
 server:
   port: 10101
-spring.security.user:
-  name: abc
-  password: abcabc
-  roles: user
+spring:
+  security.user: 
+    name: abc
+    password: abcabc
+    roles: user
+  application:
+    name: eureka-server
 eureka:
   server:
     renewalPercentThreshold: 0.3
+    #eviction-interval-timer-in-ms: 1000
   instance:
     hostname: localhost
     preferIpAddress: true
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    healthcheck:
+      enabled: true
+    #registerWithEureka: false
+    #fetchRegistry: false
     serviceUrl:
       defaultZone: http://abc:abcabc@localhost:10101/eureka/
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+logging.level.com.netflix.discovery: DEBUG
+#logging.level.org.springframework.cloud.*: DEBUG

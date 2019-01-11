@@ -14,10 +14,9 @@ public class WebSecurityConfig{
   public class EurekaApiSecurityConfig extends WebSecurityConfigurerAdapter {
       @Override
       protected void configure(HttpSecurity http) throws Exception {
-        http//.antMatcher("/eureka/**")
+        http.antMatcher("/eureka/**")
 				.authorizeRequests()
           .anyRequest().hasRole("APP")
-          //.anyRequest().authenticated()
 					.and()
         .httpBasic().and().csrf().disable();
         /*
@@ -28,14 +27,15 @@ public class WebSecurityConfig{
         */
       }
   }
-  //@Configuration
+  @Configuration
   public class WebAdminSecurityConfig extends WebSecurityConfigurerAdapter {
       @Override
       protected void configure(HttpSecurity http) throws Exception {
         http
-          .formLogin().loginPage("/login")
-          .failureUrl("/login?failed")
-          .loginProcessingUrl("/auth/login")
+          .formLogin()
+          // .loginPage("/login")
+          // .failureUrl("/login?failed")
+          // .loginProcessingUrl("/auth/login")
           .and()
           .authorizeRequests()
           .antMatchers("/login","/auth/login").permitAll()
