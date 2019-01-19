@@ -46,7 +46,7 @@ public class LogController{
     public Timer getTimer(){
         //Will add tag to all metrics
         metricRegistry.config().commonTags("app",appName,"serviceid","consumer-service","appid","SDC20170301");
-        return metricRegistry.timer("acm.requests", "trcode","TESTO001");
+        return metricRegistry.timer("accm.requests", "trcode","TESTO001");
     }
     @Autowired
     private Timer timer;  
@@ -81,7 +81,7 @@ public class LogController{
             e.printStackTrace();
         }
         sample.stop(timer);
-
+        
         // Counter conunter = metricRegistry.find(name).counter();
         // metricRegistry.counter(name, tags);
 

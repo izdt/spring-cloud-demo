@@ -1,32 +1,50 @@
 server:
   port: 10301
 spring:
-  zipkin:
-    sender:
-      type: kafka
+  # zipkin:
+    # sender:
+      # type: kafka
     # base-url: http://localhost:9411
-    kafka:
-      topic: zipkin
+    # kafka:
+      #topic: zipkin
       # group-id: zipkin
   sleuth:
     sampler:
-      probability: 1.0
-  kafka:
-    bootstrap-servers: 127.0.0.1:9092
+      probability: 0 #1.0
+  #kafka:
+  #  bootstrap-servers: 127.0.0.1:9092
 eureka:
   client:
-    serviceUrl:
-      defaultZone: http://abc:abcabc@localhost:10101/eureka/
+    region: beijing
+    availability-zones:
+      beijing: beijing-1,beijing-2
+    service-url:
+      beijing-1: http://localhost:10101/eureka/,http://localhost:10102/eureka/
+      beijing-2: http://localhost:10201/eureka/,http://localhost:10202/eureka/
+      #defaultZone: http://abc:abcabc@localhost:10101/eureka/
+      #defaultZone: http://localhost:10301/eureka/,http://localhost:10302/eureka/
+  instance:
+    metadata-map:
+      appid: SDC20170301_01
+      #serviceName: 测试微服务
+      dc: SH
+      zone: beijing-1
 feign:
   hystrix:
     enabled: true
 
+
+abc.config.serviceUrl: ${TEST_SERVICE_URLS:TEST}
 logging.level.org.springframework.cloud.sleuth: DEBUG
+logging.level.com.abc.sc: DEBUG
+logging.level.com.netflix.discovery: DEBUG
+logging.level.org.springframework.cloud.*: DEBUG
 #management.endpoints.web.base-path: /
 management.endpoints.web.exposure.include: "*"
 management.endpoint.health.show-details: ALWAYS
 #management.metrics.export.atlas.uri: http://localhost:7101/api/v1/publish
-
+management.metrics.export.atlas.enabled: false
+management.server.port: 8091
 
 #ribbon.eureka.enabled: false
 spring-cloud-provider-demo.ribbon.listOfServers: localhost:10202
