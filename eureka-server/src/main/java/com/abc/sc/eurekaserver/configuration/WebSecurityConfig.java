@@ -25,6 +25,12 @@ public class WebSecurityConfig{
           .anyRequest().authenticated()
           .and().httpBasic().and().csrf().disable();
         */
+        /*
+        http.httpBasic()
+                    .and().authorizeRequests()
+                    .anyRequest().authenticated()
+                    .and().csrf().disable();
+        */
       }
   }
   @Configuration
