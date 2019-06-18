@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component//("eurekaClientConfigInterceptor")
+@Component("eurekaClientConfigInterceptor")
 public class AbcEurekaClientConfigInterceptor implements EurekaClientConfigInterceptor {
     Logger logger = LoggerFactory.getLogger(getClass());
     @Override
