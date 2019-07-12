@@ -18,13 +18,28 @@ spring:
   kafka:
     bootstrap-servers: 127.0.0.1:9092
 
+#eureka:
+#  instance:
+#    preferIpAddress: true
+#  client:
+#    serviceUrl:
+#      defaultZone: http://abc:abcabc@localhost:10101/eureka/
+
+###
+#Set txt.abc.demo.com -> a-region.abc.demo.com b-region.abc.demo.com
+#Set txt.a-region.abc.demo.com to 10.0.0.1 10.0.0.2
+#Set txt.b-region.abc.demo.com to 10.0.0.3 10.0.0.4
+###
 eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://abc:abcabc@localhost:10101/eureka/
-      
+ client:
+   region: abc
+   useDnsForFetchingServiceUrls: true
+   eurekaServerPort: 10101
+   eurekaServerDNSName: demo.com
+   eurekaServerURLContext: eureka
+
+#   serviceUrl:
+#     azone: http://abc:abcabc@localhost:10101/eureka/
 management.endpoints.web.exposure.include: "*"
 management.endpoint.health.show-details: ALWAYS
 management.metrics.export.atlas.uri: http://localhost:7101/api/v1/publish
